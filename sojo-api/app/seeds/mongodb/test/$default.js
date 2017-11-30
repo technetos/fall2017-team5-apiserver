@@ -106,13 +106,13 @@ module.exports = {
   }),
 
   payments: dab.map (dab.get ('accounts'), (account, opts, callback) => {
-    let model = 'Utility';
+    let payment_type = 'Utility';
     return callback (null, {
       account_id: account._id,
       amount_paid: 1000,
       date_paid: new Date(),
-      model,
-      company_id: ObjectId()
+      payment_type,
+      payment_object: ObjectId()
     });
   })
 };
